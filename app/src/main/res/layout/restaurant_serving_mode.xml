@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/restaurant_mode"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_margin="10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dinein_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_available"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/dinein_textview"
+        app:layout_constraintEnd_toStartOf="@+id/dinein_textview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/dinein_textview" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dinein_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/label_dine_in"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/colorGray76"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/takeout_imageview"
+        app:layout_constraintStart_toEndOf="@id/dinein_imageview"
+        app:layout_constraintTop_toTopOf="@id/takeout_textview"
+        app:layout_constraintBottom_toBottomOf="@id/takeout_textview" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/takeout_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_available"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@id/takeout_textview"
+        app:layout_constraintStart_toEndOf="@+id/dinein_textview"
+        app:layout_constraintTop_toTopOf="@id/takeout_textview"
+        app:layout_constraintBottom_toBottomOf="@id/takeout_textview" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/takeout_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/label_takeout"
+        android:textColor="@color/colorGray76"
+        android:layout_marginEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/delivery_imageview"
+        app:layout_constraintStart_toEndOf="@id/takeout_imageview"
+        app:layout_constraintTop_toTopOf="@id/dinein_imageview"
+        app:layout_constraintBottom_toBottomOf="@id/dinein_imageview" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/delivery_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/ic_available"
+        app:layout_constraintEnd_toStartOf="@id/delivery_textview"
+        app:layout_constraintStart_toEndOf="@+id/takeout_textview"
+        app:layout_constraintTop_toTopOf="@id/takeout_textview"
+        app:layout_constraintBottom_toBottomOf="@id/takeout_textview" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/delivery_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:layout_marginEnd="10dp"
+        android:text="@string/label_delivery"
+        android:textColor="@color/colorGray76"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/delivery_imageview"
+        app:layout_constraintTop_toTopOf="@id/takeout_textview"
+        app:layout_constraintBottom_toBottomOf="@id/takeout_textview" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

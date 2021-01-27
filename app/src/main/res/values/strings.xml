@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">FoodFinder</string>
+    <string name="label_ok">OK</string>
+    <string name="loading">Loading…</string>
+    <string name="api_key">DL3u-mjBTvE38BE72raf_BJPKpwD1UYWL6yZAkBMO0ilR9cbMAKO8pwkSLmlX8deWE-0wMlXxR5gFwrAezWo4Tz0K1dw0c5-eBhIT6DatdWEUqiJsb289Uh8TcMMYHYx</string>
+    <string name="sort">Sort</string>
+    <string name="sort_by">Sort By</string>
+    <string name="label_dine_in">Dine in</string>
+    <string name="label_contact">Call</string>
+    <string name="label_takeout">Takeout</string>
+    <string name="label_delivery">Delivery</string>
+    <string name="label_contact_dine_in">Check-in For Dining</string>
+    <string name="label_contact_takeout">Ask for Takeout</string>
+    <string name="label_contact_delivery">Schedule Delivery</string>
+    <string name="welcome_text">Welcome to FoodFinder App.\nYou can search all your favorite food,\nrestaurant and places on this App</string>
+    <string name="welcome_text_location">Search for restaurants in nearby area, city or neighborhood</string>
+    <string name="search_in_location">Didn\'t find what you were looking for?\nSearch by location</string>
+    <string name="search_before_sorting">Please search before sorting…</string>
+    <string name="food_finder">Food Finder</string>
+    <string name="no_location_permission">No location permissions</string>
+    <string name="no_calling_permission">No Calling permissions</string>
+    <string name="grant_location_permission">Please grant location permission before searching</string>
+    <string name="grant_call_permission">Please grant call permission before calling</string>
+    <string name="no_restaurants_found">No restaurants found</string>
+    <string name="search">Search</string>
+    <string name="current_location">Current Location</string>
+
+    <string-array name="sort_spinner_items">
+        <item>Best Match</item>
+        <item>Rating</item>
+        <item>Reviews</item>
+        <item>Distance</item>
+    </string-array>
+    <string name="business_id">business_id</string>
+    <string name="business_name">business_name</string>
+    <string name="get_directions">Open In Browser</string>
+    <string name="unknown">Unknown</string>
+
+</resources>

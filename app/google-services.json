@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "671754422615",
+    "project_id": "foodfinder-302903",
+    "storage_bucket": "foodfinder-302903.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671754422615:android:cb768e23b1e01101f51612",
+        "android_client_info": {
+          "package_name": "com.vishwanath.rbcproject.foodfinderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "671754422615-lquo2l3881gv27eojst8rvtha11tbovb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-eDmDJeIKrb0r0a-21XOVBdXI_0UpuS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "671754422615-lquo2l3881gv27eojst8rvtha11tbovb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

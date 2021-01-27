@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:background="?attr/selectableItemBackground"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    app:cardMaxElevation="6dp"
+    app:contentPadding="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gridview_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/restaurant_imageview"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_map_marker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurant_name_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-smallcaps"
+            android:gravity="start"
+            android:singleLine="true"
+            android:text="Samurai Sushi Restaurant"
+            android:textColor="@color/colorGray42"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/restaurant_rating_bar"
+            app:layout_constraintStart_toEndOf="@id/restaurant_imageview"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/restaurant_rating_bar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="10dp"
+            android:rating="4"
+            app:layout_constraintBottom_toBottomOf="@id/restaurant_name_textview"
+            app:layout_constraintEnd_toStartOf="@+id/restaurant_rating_textview"
+            app:layout_constraintStart_toEndOf="@+id/restaurant_name_textview"
+            app:layout_constraintTop_toTopOf="@+id/restaurant_name_textview" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurant_rating_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center"
+            android:text="(243)"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/restaurant_rating_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/restaurant_rating_bar"
+            app:layout_constraintTop_toTopOf="@id/restaurant_rating_bar"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/restaurant_distance_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_map_marker_distance"
+            app:layout_constraintBottom_toBottomOf="@id/restaurant_category"
+            app:layout_constraintStart_toStartOf="@id/restaurant_rating_bar"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_rating_bar"
+            app:layout_constraintTop_toTopOf="@id/restaurant_category" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurant_distance_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="5 miles"
+            android:textColor="@color/colorGray76"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/restaurant_category"
+            app:layout_constraintStart_toEndOf="@id/restaurant_distance_icon"
+            app:layout_constraintTop_toTopOf="@id/restaurant_category" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurant_price_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="$$$"
+            android:textColor="@color/colorGray76"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/restaurant_category"
+            app:layout_constraintStart_toEndOf="@id/restaurant_imageview"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_name_textview" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurant_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="American, Tacos"
+            android:textColor="@color/colorGray76"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/restaurant_price_range"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_name_textview" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/restaurant_address_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_map_marker"
+            app:layout_constraintEnd_toStartOf="@id/restaurant_address"
+            app:layout_constraintStart_toEndOf="@id/restaurant_imageview"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_price_range" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurant_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="15687 Preston Rd, Dallas TX 75039"
+            android:textColor="@color/colorGray76"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@id/restaurant_address_icon"
+            app:layout_constraintBottom_toBottomOf="@id/restaurant_address_icon"
+            app:layout_constraintStart_toEndOf="@id/restaurant_address_icon"/>
+
+        <include
+            android:id="@+id/restaurant_mode_layout"
+            layout="@layout/restaurant_serving_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@id/restaurant_imageview"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_address" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

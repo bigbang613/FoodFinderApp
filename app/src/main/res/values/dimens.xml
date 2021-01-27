@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="toolbar_elevation">8dp</dimen>
+    <dimen name="margin_top">55dp</dimen>
+    <dimen name="item_width">50dp</dimen>
+    <dimen name="textview_margin_top">20dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+</resources>

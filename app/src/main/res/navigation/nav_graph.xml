@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/restaurantListFragment">
+
+    <fragment
+        android:id="@+id/restaurantListFragment"
+        android:name="com.vishwanath.rbcproject.foodfinderapp.view.restaurantlist.RestaurantListFragment"
+        android:label="Restaurant List">
+        <action
+            android:id="@+id/action_restaurantListFragment_to_restaurantDetailFragment"
+            app:destination="@id/restaurantDetailFragment" />
+        <action
+            android:id="@+id/action_restaurantListFragment_to_restaurantsInLocationFragment"
+            app:destination="@id/restaurantsInLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantDetailFragment"
+        android:name="com.vishwanath.rbcproject.foodfinderapp.view.restaurantdetails.RestaurantDetailFragment"
+        android:label="Restaurant Details">
+        <action
+            android:id="@+id/action_restaurantDetailFragment_to_restaurantListFragment"
+            app:destination="@id/restaurantListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantsInLocationFragment"
+        android:name="com.vishwanath.rbcproject.foodfinderapp.view.restaurantsbylocation.RestaurantsInLocationFragment"
+        android:label="RestaurantsInLocationFragment">
+        <action
+            android:id="@+id/action_restaurantsInLocationFragment_to_restaurantDetailFragment"
+            app:destination="@id/restaurantDetailFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_restaurantsInLocationFragment_to_restaurantListFragment"
+            app:destination="@id/restaurantListFragment" />
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/restaurant_detail_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <include layout="@layout/progress_bar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/images_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/restaurant_rating_bar"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="10dp"
+            android:rating="4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/images_list" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurant_rating_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center"
+            android:text="(243)"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/restaurant_rating_bar"
+            app:layout_constraintStart_toEndOf="@id/restaurant_rating_bar"
+            app:layout_constraintTop_toTopOf="@id/restaurant_rating_bar" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/restaurant_distance_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_map_marker_distance"
+            app:layout_constraintBottom_toBottomOf="@id/restaurant_rating_textview"
+            app:layout_constraintStart_toEndOf="@id/restaurant_rating_textview"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_rating_bar"
+            app:layout_constraintTop_toTopOf="@id/restaurant_rating_textview" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurant_distance_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="5 miles"
+            android:textColor="@color/colorGray42"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/restaurant_distance_icon"
+            app:layout_constraintStart_toEndOf="@id/restaurant_distance_icon"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_rating_bar"
+            app:layout_constraintTop_toTopOf="@id/restaurant_distance_icon" />
+
+        <include
+            android:id="@+id/call_layout_container"
+            layout="@layout/call_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/restaurant_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_rating_bar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/expensive_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:queryHint="Search Food, starbucks etc."
+            android:text="$$$"
+            app:layout_constraintStart_toEndOf="@id/call_layout_container"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_rating_bar" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorGray50"
+            app:layout_constraintBottom_toBottomOf="@id/expensive_textview"
+            app:layout_constraintStart_toEndOf="@id/expensive_textview"
+            app:layout_constraintTop_toTopOf="@id/expensive_textview" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/category_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:singleLine="true"
+            android:text="American, Tacos, Japanese etc"
+            app:layout_constraintBottom_toBottomOf="@id/expensive_textview"
+            app:layout_constraintStart_toEndOf="@id/expensive_textview"
+            app:layout_constraintTop_toTopOf="@id/expensive_textview" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_textview_no_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:queryHint="Search Food, starbucks etc."
+            android:text="@string/no_restaurants_found"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurant_hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="Open till 10PM today"
+            android:textColor="@color/colorGray76"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/expensive_textview"
+            app:layout_constraintTop_toBottomOf="@id/category_textview" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/restaurant_address_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_map_marker"
+            app:layout_constraintEnd_toStartOf="@id/restaurant_address"
+            app:layout_constraintStart_toStartOf="@id/restaurant_hours"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_hours" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restaurant_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="15687 Preston Rd, Dallas TX 75039"
+            android:textColor="@color/colorGray76"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/restaurant_address_icon"
+            app:layout_constraintStart_toEndOf="@id/restaurant_address_icon"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_hours"
+            app:layout_constraintTop_toTopOf="@id/restaurant_address_icon" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_address" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/get_directions_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/get_directions_background"
+            android:text="@string/get_directions"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/map_fragment" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dinein_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/action_res_background"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/label_contact_dine_in"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_directions_button" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/takeout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/action_res_background"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/label_contact_takeout"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dinein_button" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/delivery_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/action_res_background"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/label_contact_delivery"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/takeout_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
